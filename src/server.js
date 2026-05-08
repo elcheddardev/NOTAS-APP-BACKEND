@@ -10,7 +10,7 @@ const app = express()
 app.use(cors({
     origin: [
     "http://localhost:5173",
-    "https://celadon-torte-02d9bc.netlify.app/",
+    "https://celadon-torte-02d9bc.netlify.app",
 
     ],
 }))
