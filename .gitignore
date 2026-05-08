@@ -37,4 +37,4 @@ coverage/
 *.swo
 
 # Archivos http
-*.httpgit sta
+*.http

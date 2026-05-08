@@ -22,5 +22,14 @@ PUT http://localhost:3000/api/notes/3001
 Content-type: application/json
 
 {
-    "title": "titulo nuevo de la nota"
+    "title": "Nota actualizada"
+}
+
+###
+POST https://notas-app-backend-y4z7.onrender.com/api/notes/
+Content-Type: application/json
+
+{
+    "title": "Nota creada hacia el backend desplegado",
+    "description": "Descripcion de la nota creada desde el backend"
 }

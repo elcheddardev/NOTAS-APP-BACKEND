@@ -8,7 +8,11 @@ dotenv.config()
 const app = express()
 
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: [
+    "http://localhost:5173",
+    "https://celadon-torte-02d9bc.netlify.app/",
+
+    ],
 }))
 
 app.use(express.json())
