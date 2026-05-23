@@ -33,3 +33,12 @@ Content-Type: application/json
     "title": "Nota creada hacia el backend desplegado",
     "description": "Descripcion de la nota creada desde el backend"
 }
+
+###
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "123456"
+}

@@ -1,5 +1,6 @@
 import express from "express"
 import notesRouter from "./routes/notesRoutes.js"
+import authRouter from "./routes/authRoutes.js"
 import dotenv from "dotenv"
 import { connectDB } from "./config/db.js"
 import cors from 'cors'
@@ -18,6 +19,8 @@ app.use(cors({
 app.use(express.json())
 
 app.use("/api/notes", notesRouter)
+
+app.use("/api/auth", authRouter)    
 
 const PORT = process.env.PORT || 3001
 
