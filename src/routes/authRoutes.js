@@ -18,4 +18,20 @@ router.post("/register", async (req, res) => {
         res.status(500).json({ error: "internal server error"})
     }
 })
+
+router.post("/login", async (req, res) => {
+    try { 
+        const { email, password } = req.body 
+        const user = await User.findOne({ email: email })
+        if(!user) return res.status(400).json({ error: "Usuario no encontrado"})
+        const isMatch = await bcrypt.compare(password, user.password)
+        if(!isMatch) return res.status(400).json({ error: "contraseña incorrecta"})
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" })
+        res.status(200).json({ token: token })    
+    } catch (error) {
+        console.error("Error al hacer login", error)  // ← adentro del catch
+    res.status(500).json({ error: "internal server error" })
+    }
+})
+
 export default router

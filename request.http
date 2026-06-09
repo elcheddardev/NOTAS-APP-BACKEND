@@ -1,17 +1,24 @@
 GET http://localhost:3000/api/notes
 
+### Get all notes (authenticated)
+GET http://localhost:3000/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTFiZDhkYjA5NDU3MWQ1OThjYjc4NyIsImlhdCI6MTc4MDUwNDk4MSwiZXhwIjoxNzgxMTA5NzgxfQ.svTPQAriq_jjIL2zSoX_cck2urBdIevItg9G2OU2cY0
+
+
 ###
 http://localhost:3000/api/notes/1234
 
 ###
 
+### Create note (authenticated)
 POST http://localhost:3000/api/notes
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTFiZDhkYjA5NDU3MWQ1OThjYjc4NyIsImlhdCI6MTc4MDc4NTE5OCwiZXhwIjoxNzgxMzg5OTk4fQ.jC_sfUtXEpS82R-NyNvB5RacrSLeSJUxciFZlafUanI
+
 
 {
-    "title": "Nota Creada desde el backend",
-    "description": "Descripcion de la nota creada desde el backend"
-
+    "title": "Nota con usuario asignado",
+    "description": "Esta nota tiene dueño"
 }
 ###
 
@@ -36,6 +43,14 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "123456"
+}
+###
+POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
